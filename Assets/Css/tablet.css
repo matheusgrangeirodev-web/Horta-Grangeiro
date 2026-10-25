@@ -1,0 +1,46 @@
+/* ============================================================
+   tablet.css — Horta Grangeiro
+   Padrões de Projeto de Sítios Internet II — Fatec Jales
+   Breakpoint tablet / desktop médio (≤ 960px)
+   Vinculado em todas as páginas após style.css e antes de mobile.css
+   ============================================================ */
+
+@media (max-width: 960px) {
+
+    /* Seções de duas colunas viram coluna única */
+    .sobre-intro,
+    .quem-somos {
+        grid-template-columns: 1fr;
+        grid-template-areas: "texto";
+    }
+
+    /* Fotos decorativas ocultadas em telas menores */
+    .sobre-intro-foto,
+    .quem-somos-visual {
+        display: none;
+    }
+
+    /* Grids de 3 colunas viram 2 colunas */
+    .destaque-grid,
+    .produtos-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .missao-grid,
+    .equipe-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Contato vira coluna única empilhando form sobre info */
+    .contato-grid {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "form"
+            "info";
+    }
+
+    /* Fotos do produto empilham */
+    .card-produto-fotos {
+        grid-template-columns: 1fr;
+    }
+}

@@ -232,9 +232,13 @@ section + section {
 .quem-somos {
     display: grid;
     grid-template-columns: 1.1fr 0.9fr;
+    grid-template-areas: "texto visual";
     gap: 3.5rem;
     align-items: center;
 }
+
+.quem-somos-texto { grid-area: texto; }
+.quem-somos-visual { grid-area: visual; }
 
 .quem-somos-texto p {
     font-size: 1.05rem;
@@ -342,6 +346,8 @@ section + section {
 .destaque-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+    place-items: stretch;
     gap: 1.5rem;
     margin-bottom: 2.5rem;
 }
@@ -374,9 +380,13 @@ section + section {
 .sobre-intro {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-template-areas: "texto foto";
     gap: 3rem;
     align-items: center;
 }
+
+.sobre-intro-texto { grid-area: texto; }
+.sobre-intro-foto  { grid-area: foto; }
 
 .sobre-intro-foto img {
     width: 100%;
@@ -389,6 +399,8 @@ section + section {
 .missao-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+    place-items: stretch;
     gap: 1.5rem;
 }
 
@@ -414,6 +426,8 @@ section + section {
 .equipe-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+    place-items: stretch;
     gap: 1.5rem;
 }
 
@@ -481,6 +495,8 @@ section + section {
 .produtos-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+    place-items: stretch;
     gap: 1.5rem;
 }
 
@@ -513,9 +529,12 @@ section + section {
 .contato-grid {
     display: grid;
     grid-template-columns: 1.3fr 1fr;
+    grid-template-areas: "form info";
     gap: 3rem;
     align-items: start;
 }
+
+.formulario-contato { grid-area: form; }
 
 .form-titulo { margin-bottom: 1.5rem; }
 
@@ -578,6 +597,7 @@ section + section {
 }
 
 .info-contato {
+    grid-area: info;
     background: #fff;
     border-radius: 12px;
     padding: 2rem;
@@ -688,7 +708,8 @@ footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
+    align-content: center;
     gap: 1rem;
 }
 
@@ -727,7 +748,8 @@ footer {
 
 /* ===========================
    RESPONSIVIDADE
-   Todas as media queries estão em: Assets/Css/mobile.css
+   Todas as media queries estão em:
+   Assets/Css/tablet.css (≤ 960px) · Assets/Css/mobile.css (≤ 600px)
    =========================== */
 
 /* ===========================
@@ -804,4 +826,102 @@ footer {
     color: #888;
     margin-top: 0.6rem;
     text-align: center;
+}
+
+.texto-centro {
+    text-align: center;
+}
+
+.secao-label-destaque {
+    color: var(--destaque);
+}
+
+.foto-placeholder-grande {
+    width: 100%;
+    height: 320px;
+    background: var(--destaque);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--principal);
+    font-weight: 700;
+    text-align: center;
+    padding: 2rem;
+    box-shadow: 0 6px 24px var(--sombra);
+}
+
+.icone-foto-placeholder {
+    opacity: 0.4;
+    fill: var(--principal);
+    display: block;
+    margin: 0 auto 0.75rem;
+}
+
+#missao-titulo {
+    margin-bottom: 2rem;
+}
+
+.icone-card {
+    display: inline-block;
+    vertical-align: -3px;
+    margin-right: 6px;
+    fill: var(--principal);
+}
+
+.equipe-cabecalho {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.cta-produto-box {
+    text-align: center;
+    margin-top: 3rem;
+    padding: 2.5rem;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 14px var(--sombra);
+}
+
+.cta-produto-box h3 {
+    margin-bottom: 0.5rem;
+}
+
+.cta-produto-box p {
+    color: #666;
+    max-width: 420px;
+    margin: 0 auto 1.5rem;
+}
+
+.form-intro {
+    color: #666;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.texto-placeholder {
+    color: #888;
+}
+
+.contato-extra {
+    margin-top: 1.8rem;
+}
+
+.contato-subtitulo {
+    font-weight: 600;
+    color: var(--principal);
+    margin-bottom: 0.8rem;
+}
+
+.whatsapp-aviso {
+    font-size: 0.8rem;
+    color: #888;
+    margin-top: 0.5rem;
+}
+
+.contato-redes {
+    display: flex;
+    gap: 0.75rem;
+    flex-flow: row wrap;
+    align-content: flex-start;
 }
